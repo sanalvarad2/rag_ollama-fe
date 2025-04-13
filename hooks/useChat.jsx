@@ -5,13 +5,16 @@ import * as chatService from '../services/chat';
 const useChat = () => {
   const {axios} = useContext(AxiosContext);
 
-  const preguntar = (pregunta, chatId) => chatService.preguntar(axios, pregunta, chatId);
-  const getChatId = () => chatService.getChatId(axios);
-  const getChats = (chatId) => chatService.getChats(axios, chatId);
+  const preguntar = async(pregunta, chatId) => await chatService.preguntar(axios, pregunta, chatId);
+  const getChatId = async() => await chatService.getChatId(axios);
+  const getChat = async(chatId) => await chatService.getChat(axios, chatId);
+  const getChats = async() => await chatService.getChats(axios);
 
   return {
     preguntar,
     getChatId,
+    getChat,
+    getChats
   };
 };
 
