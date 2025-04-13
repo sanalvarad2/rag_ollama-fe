@@ -7,6 +7,7 @@ const useChat = () => {
 
   const preguntar = (pregunta, chatId) => chatService.preguntar(axios, pregunta, chatId);
   const getChatId = () => chatService.getChatId(axios);
+  const getChats = (chatId) => chatService.getChats(axios, chatId);
 
   return {
     preguntar,

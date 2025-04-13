@@ -23,4 +23,14 @@ const getChatId = async (axiosInstance) => {
   }
 };
 
-export { preguntar, getChatId };
+const getChats = async (axiosInstance, chatId) => {
+  try {
+    const response = await axiosInstance.get(`/conversations/${chatId}`);
+    return response.data;
+  } catch (error) {
+    // Handle error appropriately
+    throw error;
+  }
+};
+
+export { preguntar, getChatId, getChats };
